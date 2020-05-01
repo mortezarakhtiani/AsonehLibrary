@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ExpandableGridLayout">
+        <attr name="expandDuration" format="integer"/>
+        <attr name="expanded" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="JustifiedTextView">
+        <attr name="text" format="string"/>
+        <attr name="textColor" format="color"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="fontPath" format="string"/>
+        <attr name="lineSpace" format="integer"/>
+    </declare-styleable>
+
+</resources>

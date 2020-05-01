@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingTop="8dp"
+    android:background="@color/colorBGMain"
+    android:paddingRight="8dp"
+    android:paddingLeft="8dp">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        app:searchIcon="@drawable/ic_search_black_24dp"
+        app:divider="@android:drawable/ic_menu_view"
+        app:closeIcon="@drawable/ic_close_black_24dp"
+        app:theme="@style/SearchViewStyle"
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false"/>
+
+    <ListView
+        android:id="@+id/listItems"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

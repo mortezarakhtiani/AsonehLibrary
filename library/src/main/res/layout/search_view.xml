@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carbon.widget.LinearLayout android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <carbon.widget.EditText
+                app:carbon_fontPath="@string/iransans"
+        android:id="@+id/searchEditText"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:visibility="gone"
+        android:alpha="0"
+        android:cursorVisible="true"
+        app:carbon_cursorColor="@color/colorblue"
+        android:paddingRight="@dimen/carbon_grid8"
+        android:paddingLeft="@dimen/carbon_grid8"
+        android:hint="جستجو ..."
+        android:textColor="@color/colorblue"
+        android:textColorHint="@color/white"
+        android:textSize="10sp"
+        />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        app:fabCustomSize="40dp"
+        android:id="@+id/search_fab"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/ic_search_black_24dp"
+        android:layout_height="wrap_content"/>
+</carbon.widget.LinearLayout>
