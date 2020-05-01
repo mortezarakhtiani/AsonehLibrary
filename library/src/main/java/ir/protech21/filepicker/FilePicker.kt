@@ -3,36 +3,54 @@ package ir.protech21.filepicker
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Fragment
+import android.app.FragmentTransaction
 import android.content.Intent
 import android.os.Bundle
 
 class FilePicker(val activity: Activity) {
 
     var intent: Intent? = null
-    var function: ((Intent?) -> Unit)? = null
-    fun setOnResponse(intent: Intent, function: (Intent?) -> Unit): FilePicker {
-        val fragmentTransaction = activity.fragmentManager.beginTransaction()
+    var function: ((requestCode: Int, resultCode: Int, data: Intent?) -> Unit)? = null
+    var listener: ((data: Intent?) -> Unit)? = null
+    var requestCode = 2585
+    private var fragmentTransaction: FragmentTransaction? = null
+
+    fun setOnResponse(intent: Intent, requestCode: Int = 2585, function: (requestCode: Int, resultCode: Int, data: Intent?) -> Unit): FilePicker {
+        fragmentTransaction = activity.fragmentManager.beginTransaction()
         this.intent = intent
+        this.requestCode = requestCode
         this.function = function
         val fragment = StaticFragment()
-        fragmentTransaction?.add(fragment, "getusername")
-        fragmentTransaction.commit()
+        fragmentTransaction?.add(fragment, "intent")
+        fragmentTransaction?.commit()
         return this
     }
+
+    fun setOnResponse(intent: Intent, listener: (data: Intent?) -> Unit): FilePicker {
+        fragmentTransaction = activity.fragmentManager.beginTransaction()
+        this.intent = intent
+        this.listener = listener
+        val fragment = StaticFragment()
+        fragmentTransaction?.add(fragment, "intent")
+        fragmentTransaction?.commit()
+        return this
+    }
+
 
     @SuppressLint("ValidFragment")
     inner class StaticFragment : Fragment() {
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
-            startActivityForResult(intent, 2585)
+            startActivityForResult(intent, requestCode)
         }
 
         override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
             super.onActivityResult(requestCode, resultCode, data)
-            if (resultCode == Activity.RESULT_OK && requestCode == 2585) {
-                function?.let { it(data) }
+            function?.let { it(requestCode,resultCode,data) }
+            if (resultCode == Activity.RESULT_OK && this@FilePicker.requestCode == requestCode) {
+                listener?.let { it(data) }
+                fragmentTransaction?.remove(this)
             }
-
         }
     }
 
