@@ -4,7 +4,7 @@
     android:layout_height="fill_parent">
 
 
-            <com.mingle.headsUp.widget.CircleImageView
+            <ir.protech21.headsUp.widget.CircleImageView
                 android:id="@+id/iconIM"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
@@ -12,7 +12,7 @@
                 android:paddingLeft="11dp"
                 android:paddingRight="11dp"
                 android:paddingBottom="13dp"
-                android:src="@drawable/ic_launcher" />
+                android:src="@drawable/logo" />
             <TextView
                 android:id="@+id/titleTV"
                 android:layout_width="wrap_content"
@@ -56,7 +56,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@+id/iconIM"
                 android:background="@color/gray"
-                android:visibility="gone"></View>
+                android:visibility="gone"/>
 
             <LinearLayout
                 android:id="@+id/menuL"
@@ -72,7 +72,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_transparency_to_grey"
                     android:visibility="gone">
 
                     <ImageView
@@ -82,7 +81,7 @@
                         android:duplicateParentState="true"
                         android:padding="6dp"
                         android:scaleType="centerInside"
-                        android:src="@drawable/ic_launcher" />
+                        android:src="@drawable/logo" />
 
                     <TextView
                         android:id="@+id/menuText1"
@@ -99,7 +98,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_transparency_to_grey"
                     android:visibility="gone">
 
                     <ImageView
@@ -109,7 +107,7 @@
                         android:duplicateParentState="true"
                         android:padding="6dp"
                         android:scaleType="centerInside"
-                        android:src="@drawable/ic_launcher" />
+                        android:src="@drawable/logo" />
 
                     <TextView
                         android:id="@+id/menuText2"
@@ -127,7 +125,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_transparency_to_grey"
                     android:visibility="gone">
 
                     <ImageView
@@ -137,7 +134,7 @@
                         android:duplicateParentState="true"
                         android:padding="6dp"
                         android:scaleType="centerInside"
-                        android:src="@drawable/ic_launcher" />
+                        android:src="@drawable/logo" />
 
                     <TextView
                         android:id="@+id/menuText3"
