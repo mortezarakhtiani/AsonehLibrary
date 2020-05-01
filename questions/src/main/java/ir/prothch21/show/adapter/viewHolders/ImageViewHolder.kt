@@ -29,7 +29,7 @@ class ImageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             if (jsonArray.isNull(i))
                 continue
             val imagelin = LayoutInflater.from(itemView.context).inflate(R.layout.image_lin, gridLayout, false)
-            Picasso.with(itemView.context).load(itemView.context.getString(R.string.image_url) + jsonArray.getString(i)).resize(64, 64).into(imagelin.image)
+            Picasso.get().load(itemView.context.getString(R.string.image_url) + jsonArray.getString(i)).resize(64, 64).into(imagelin.image)
             galleryModels.add(GalleryModel(itemView.context.getString(R.string.image_url) + jsonArray.getString(i), "title"))
 
             val param = GridLayout.LayoutParams(GridLayout.spec(

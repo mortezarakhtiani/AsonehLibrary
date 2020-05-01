@@ -20,7 +20,7 @@ class ProfileViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val json = jsonObject.getJSONObject("answer")
         val galleryModels: ArrayList<GalleryModel> = ArrayList()
 //        val bitmap = AppCompatResources.getDrawable(itemView.context,R.drawable.logo)?.toBitmap(64,64,Bitmap.Config.ARGB_8888)
-        Picasso.with(itemView.context).load(itemView.context.getString(R.string.image_url) + json.getString("icon")).placeholder(R.drawable.ic_logo).resize(64, 64).into(image)
+        Picasso.get().load(itemView.context.getString(R.string.image_url) + json.getString("icon")).placeholder(R.drawable.ic_logo).resize(64, 64).into(image)
         galleryModels.add(GalleryModel(itemView.context.getString(R.string.image_url) + json.getString("icon"), "title"))
         title.text = json.getString("title")
         image.setOnClickListener {

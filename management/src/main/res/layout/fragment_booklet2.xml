@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 app:rrbg_animateTexts_enterDuration="500"
-                app:rrbg_backgroundColor="@color/transparent"
+                app:rrbg_backgroundColor="@android:color/transparent"
                 app:rrbg_checkedPosition="1"
                 app:rrbg_enableDeselection="false"
                 app:rrbg_selectorColor="@color/colorcardbg"

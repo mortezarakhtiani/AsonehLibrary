@@ -15,7 +15,7 @@ class GalleryFragment : Fragment() {
         val view: View = inflater.inflate(R.layout.fragment_gallery, container, false)
         zoomageView = view.findViewById(R.id.imageView)
         val bundle = arguments
-        Picasso.with(activity).load(bundle!!.getString("image")).placeholder(R.drawable.ic_logo).into(zoomageView)
+        Picasso.get().load(bundle!!.getString("image")).placeholder(R.drawable.ic_logo).into(zoomageView)
         return view
     }
 }

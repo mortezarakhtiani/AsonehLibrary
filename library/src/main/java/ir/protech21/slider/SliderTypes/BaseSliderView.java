@@ -124,8 +124,7 @@ public abstract class BaseSliderView {
             if (this.mLoadListener != null) {
                 this.mLoadListener.onStart(this);
             }
-
-            Picasso p = this.mPicasso != null ? this.mPicasso : Picasso.with(this.mContext);
+            Picasso p = this.mPicasso != null ? this.mPicasso : Picasso.get();
 
             RequestCreator rq = null;
             if (this.mUrl != null) {
@@ -169,7 +168,8 @@ public abstract class BaseSliderView {
 
                     }
 
-                    public void onError() {
+                    @Override
+                    public void onError(Exception e) {
                         if (BaseSliderView.this.mLoadListener != null) {
                             BaseSliderView.this.mLoadListener.onEnd(false, BaseSliderView.this);
                         }
@@ -177,8 +177,8 @@ public abstract class BaseSliderView {
                         if (v.findViewById(R.id.loading_bar) != null) {
                             v.findViewById(R.id.loading_bar).setVisibility(4);
                         }
-
                     }
+                    
                 });
             }
         }

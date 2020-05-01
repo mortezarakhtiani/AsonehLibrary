@@ -4,17 +4,17 @@
         <shape>
             <gradient
                 android:angle="90"
-                android:centerColor="@color/transparent"
+                android:centerColor="@android:color/transparent"
                 android:endColor="#9900192E"
-                android:startColor="@color/transparent" />
+                android:startColor="@android:color/transparent" />
         </shape>
     </item>
     <item android:top="200dp">
         <shape>
             <gradient
                 android:angle="90"
-                android:centerColor="@color/transparent"
-                android:endColor="@color/transparent"
+                android:centerColor="@android:color/transparent"
+                android:endColor="@android:color/transparent"
                 android:startColor="#9900192E" />
 
         </shape>

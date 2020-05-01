@@ -27,10 +27,10 @@
     </declare-styleable>
 
     <declare-styleable name="RecyclerViewBannerBase">
-        <attr name="interval" />
-        <attr name="showIndicator" />
+        <attr name="interval" format="integer" />
+        <attr name="showIndicator" format="boolean" />
         <attr name="orientation" />
-        <attr name="autoPlaying" />
+        <attr name="autoPlaying" format="boolean"/>
         <attr name="indicatorSelectedSrc" format="color|reference" />
         <attr name="indicatorUnselectedSrc" format="color|reference" />
         <attr name="indicatorSpace" format="dimension|reference" />
