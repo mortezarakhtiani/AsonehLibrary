@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ir.prothch21.management" >
+
+    <application>
+        <activity android:name=".PayActivity" />
+        <activity android:name=".ManagementActivity" />
+    </application>
+</manifest>

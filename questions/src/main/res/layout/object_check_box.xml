@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carbon.widget.CheckBox android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:text="test"
+    android:padding="@dimen/carbon_grid8"
+    android:gravity="center"
+    app:carbon_stroke="@color/colorblue"
+    app:carbon_strokeWidth="@dimen/carbon_1dip"
+    app:carbon_cornerRadius="3dp"
+    android:layout_weight="1"
+    android:drawablePadding="@dimen/carbon_grid8"
+    android:background="@drawable/checked_background"
+    android:layout_margin="8dp"
+    app:carbon_tint="@color/colorblue"
+    android:textColor="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android" />

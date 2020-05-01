@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/colorPrimary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:text="پرداخت"
+            android:textColor="@color/colorgold"
+            android:textSize="20dp"
+            android:layout_margin="8dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/button_location_text_button"
+            android:id="@+id/date"
+            android:textColor="@android:color/white"
+            android:text="131313" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:passwordToggleDrawable="@null"
+            android:textColorHint="@color/colorgold">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/des"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="توضیحات"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColor="@color/colorwhite" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sabt"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/button_location_text_button"
+            android:text="ثبت" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

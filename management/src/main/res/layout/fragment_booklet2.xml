@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBGMain">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".Actvities.management.fragments.booklet.Booklet">
+
+        <carbon.widget.RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:background="#33000000"
+            android:padding="@dimen/carbon_grid8"
+            app:carbon_cornerRadius="50dp">
+
+            <co.ceryle.radiorealbutton.RadioRealButtonGroup
+                android:id="@+id/radioRealButtonGroup"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:rrbg_animateTexts_enterDuration="500"
+                app:rrbg_backgroundColor="@color/transparent"
+                app:rrbg_checkedPosition="1"
+                app:rrbg_enableDeselection="false"
+                app:rrbg_selectorColor="@color/colorcardbg"
+                app:rrbg_selectorFullSize="true"
+                app:rrbg_selectorRadius="50dp"
+                app:rrbg_selectorSize="4dp">
+
+                <co.ceryle.radiorealbutton.RadioRealButton
+                    android:id="@+id/info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:rrb_ripple="false"
+                    app:rrb_text="سفارشی"
+                    app:rrb_textColor="@android:color/white"
+                    app:rrb_textColorTo="@color/colorblue"
+                    app:rrb_textSize="10sp"
+                    app:rrb_textStyle="bold" />
+
+                <co.ceryle.radiorealbutton.RadioRealButton
+                    android:id="@+id/phoneRadio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:rrb_ripple="false"
+                    app:rrb_text="پیش‌ فرض"
+                    app:rrb_textColor="@android:color/white"
+                    app:rrb_textColorTo="@color/colorblue"
+                    app:rrb_textSize="10sp"
+                    app:rrb_textStyle="bold" />
+            </co.ceryle.radiorealbutton.RadioRealButtonGroup>
+
+        </carbon.widget.RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/card"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="@dimen/carbon_grid8"
+        android:src="@drawable/ic_add_black_24dp"
+        app:fabSize="normal">
+
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+    <carbon.widget.TextView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/carbon_grid8"
+        android:background="@color/colorgold"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="ثبت"
+        android:textColor="@android:color/white"
+        android:textSize="18dp"
+        app:carbon_cornerRadius="25dp"
+        app:carbon_fontPath="@string/iransans"
+        app:carbon_rippleColor="@color/colorgoldlight" />
+</RelativeLayout>

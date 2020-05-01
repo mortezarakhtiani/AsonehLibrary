@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ir.prothch21" >
+
+    <application>
+        <activity android:name="ir.prothch21.activities.map.MapActivity" />
+        <activity android:name=".activities.gallery.Gallery" />
+    </application>
+</manifest>

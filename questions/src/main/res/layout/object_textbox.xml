@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carbon.widget.EditText xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBGMain"
+    app:carbon_cornerRadius="5dp"
+    android:layout_width="match_parent"
+    android:hint="@string/action_search"
+    android:textSize="15dp"
+    android:layout_margin="@dimen/carbon_grid8"
+    android:cursorVisible="true"
+    app:carbon_cursorColor="@color/colorblue"
+    android:textColor="@color/white"
+    android:padding="@dimen/carbon_grid8"
+    android:textColorHint="@color/colorblue"
+    android:layout_height="wrap_content" />

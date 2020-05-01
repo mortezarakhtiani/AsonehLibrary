@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ir.protech21.NumberChoicer
+        app:carbon_cornerRadius="50dp"
+        android:layout_width="wrap_content"
+        android:id="@+id/numberChoicer"
+        android:layout_margin="@dimen/carbon_grid8"
+        app:carbon_stroke="@color/stroke"
+        app:carbon_strokeWidth="2dp"
+        android:layout_height="30dp"/>
+    <carbon.widget.TextView
+                app:carbon_fontPath="@string/iransans"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:textColor="@color/colorblue"
+        android:id="@+id/text"
+
+        android:text="dasdasdasd"
+        android:gravity="center|right"
+        android:padding="@dimen/carbon_grid8"
+        android:layout_height="match_parent"/>
+</LinearLayout>

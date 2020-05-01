@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="colorPrimary">#0d1f30</color>
+    <color name="colorPrimaryDark">#0A1824</color>
+    <color name="colorBGMain">#00192e</color>
+    <color name="colorgold">#cfb561</color>
+    <color name="colorgoldlight">#edc235</color>
+    <color name="colorwhite">#fcfcfc</color>
+    <color name="colorcardbg">#00263c</color>
+    <color name="colorblue">#02a9e0</color>
+    <color name="gray">#8a9497</color>
+    <color name="shimmer_color">#a2878787</color>
+    <!-- Light Theme Colors-->
+    <color name="main_border">#838383</color>
+    <color name="main_view">#90A4AE</color>
+
+    <!-- Screens background color-->
+
+    <!-- dots inactive colors -->
+
+    <!-- dots active colors -->
+    <color name="mdtp_white">#ffffff</color>
+    <color name="mdtp_date_picker_view_animator">@android:color/white</color>
+    <color name="mdtp_accent_color">#009688</color>
+    <color name="mdtp_accent_color_focused">#76ffffff</color>
+    <color name="mdtp_date_picker_text_normal">#9C9A9A</color>
+    <color name="mdtp_date_picker_text_highlighted">@color/mdtp_date_picker_text_normal</color>
+    <color name="mdtp_date_picker_text_normal_dark_theme">@color/mdtp_white</color>
+    <color name="mdtp_date_picker_text_highlighted_dark_theme">@color/mdtp_date_picker_text_normal_dark_theme</color>
+    <color name="mdtp_date_picker_month_day">#767676</color>
+    <color name="mdtp_red">@color/mdtp_accent_color</color>
+    <color name="mdtp_date_picker_text_disabled">#ccc</color>
+    <color name="mdtp_date_picker_month_day_dark_theme">#b4b4b4</color>
+    <color name="mdtp_date_picker_text_disabled_dark_theme">#767676</color>
+
+    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#252734</color>
+
+    <color name="stroke">#1AFFFFFF</color>
+
+
+</resources>

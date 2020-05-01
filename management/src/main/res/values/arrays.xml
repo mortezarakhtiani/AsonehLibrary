@@ -1,0 +1,14 @@
+<resources>
+
+    <string-array name="titles_main">
+        <item>خدمات موردی</item>
+        <item>خدمات استخدامی</item>
+    </string-array>
+
+
+    <string-array name="titles_management">
+        <item>دفترچه اقساط</item>
+        <item>معوقات</item>
+    </string-array>
+
+</resources>

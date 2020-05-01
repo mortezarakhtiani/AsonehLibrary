@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="8dp"
+    app:cardBackgroundColor="@color/colorBGMain"
+    android:layout_height="wrap_content">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="9dp"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="30dp"
+                android:text="3"
+                android:textColor="@color/colorgold"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:id="@+id/position"
+                android:background="@drawable/circular_edit_back"
+                android:layout_height="30dp" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="20000000"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/colorgold"
+            android:id="@+id/price"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_gravity="right"
+            android:gravity="right"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="1398/3/5"
+                android:id="@+id/date"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:textColor="@color/colorblue"
+                android:layout_height="wrap_content" />
+            <View
+                android:layout_width="3dp"
+                android:layout_margin="3dp"
+                android:id="@+id/view"
+                android:background="@android:color/holo_green_light"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_margin="8dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:id="@+id/payRel"
+        android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:background="@drawable/edit_new_text"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:padding="8dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="پرداخت شد"
+                    android:textColor="@color/colorblue"
+                    android:textSize="12sp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/paydate"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorblue"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:text="توضیحات : سلام خوبی؟؟"
+            android:id="@+id/des"
+            android:textColor="@color/colorgold"
+            android:layout_margin="8dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>
+</androidx.cardview.widget.CardView>

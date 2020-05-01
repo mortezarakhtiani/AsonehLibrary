@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carbon.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_margin="8dp"
+    android:background="@color/colorcardbg"
+    android:layout_height="wrap_content"
+    app:carbon_cornerRadius="@dimen/carbon_grid8"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:layout_editor_absoluteY="25dp"
+    android:orientation="vertical">
+
+    <carbon.widget.TextView
+                app:carbon_fontPath="@string/iransans"
+        android:id="@+id/textViewAsk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="سوال"
+        android:textColor="@color/colorgold"
+        android:layout_margin="8dp"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="8dp" />
+    <carbon.widget.LinearLayout
+        android:id="@+id/linea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <carbon.widget.TextView
+                app:carbon_fontPath="@string/iransans"
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:layout_margin="8dp"
+        android:textSize="12sp"
+        android:text="dsffdsf"
+        tools:layout_editor_absoluteX="8dp" />
+</carbon.widget.LinearLayout>

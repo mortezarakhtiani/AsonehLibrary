@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carbon.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorcardbg"
+    android:orientation="vertical">
+
+    <carbon.widget.TextView
+        android:id="@+id/textViewAsk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="سوال"
+        android:textColor="@color/colorgold"
+        app:carbon_fontPath="@string/iransans" />
+
+    <carbon.widget.FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/carbon_padding"
+        android:layout_marginRight="@dimen/carbon_padding"
+        android:background="@color/colorBGMain"
+        app:carbon_cornerRadius="5dp"
+        app:carbon_stroke="@color/colorPrimaryDark"
+        app:carbon_strokeWidth="2dp">
+
+        <ir.protech21.searchableSpinner.SearchableSpinner
+            android:id="@+id/searchableSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </carbon.widget.FrameLayout>
+
+    <carbon.widget.TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        app:carbon_fontPath="@string/iransans" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/carbon_1dip"
+        android:background="@color/colorBGMain" />
+
+    <carbon.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@drawable/divider"
+        android:dividerHeight="2dp"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+</carbon.widget.LinearLayout>

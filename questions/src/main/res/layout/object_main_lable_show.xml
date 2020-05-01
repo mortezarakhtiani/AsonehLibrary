@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carbon.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorcardbg"
+    android:orientation="vertical">
+
+    <carbon.widget.TextView
+        android:id="@+id/textViewAsk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/carbon_grid8"
+        android:paddingTop="@dimen/carbon_grid8"
+        android:text="سوال"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:carbon_fontPath="@string/iransans" />
+
+
+
+    <carbon.widget.LinearLayout
+        android:id="@+id/answers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</carbon.widget.LinearLayout>

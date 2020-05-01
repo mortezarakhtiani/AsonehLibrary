@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carbon.widget.Button
+                app:carbon_fontPath="@string/iransans" xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBGMain"
+    android:drawableStart="@drawable/ic_keyboard_arrow_left_blue_24dp"
+    android:padding="@dimen/carbon_grid8"
+    android:text="جزییات"
+    android:textColor="@color/white"
+    app:carbon_rippleColor="@color/white"
+    android:gravity="right|center_vertical"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    android:layout_height="wrap_content"
+    android:drawableLeft="@drawable/ic_keyboard_arrow_left_blue_24dp" />

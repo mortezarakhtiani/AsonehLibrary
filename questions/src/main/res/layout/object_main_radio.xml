@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carbon.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorcardbg"
+    android:orientation="vertical">
+
+    <carbon.widget.TextView
+        android:id="@+id/textViewAsk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="سوال"
+        android:textColor="@color/colorgold"
+        app:carbon_fontPath="@string/iransans" />
+
+    <carbon.widget.RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:columnCount="3"
+        app:useDefaultMargins="true" />
+
+    <carbon.widget.RadioGroup
+        android:id="@+id/radioGrouph"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/carbon_grid8"
+        android:orientation="horizontal"
+        app:carbon_cornerRadius="5dp"
+        app:carbon_stroke="@color/colorblue"
+        app:carbon_strokeWidth="2dp"
+        app:columnCount="3"
+        app:useDefaultMargins="true">
+
+    </carbon.widget.RadioGroup>
+
+    <carbon.widget.TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="dsffdsf"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        app:carbon_fontPath="@string/iransans"
+        tools:layout_editor_absoluteX="8dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/carbon_1dip"
+        android:background="@color/colorBGMain" />
+
+    <carbon.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@drawable/divider"
+        android:dividerHeight="2dp"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+</carbon.widget.LinearLayout>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carbon.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorcardbg"
+    android:orientation="vertical"
+    tools:layout_editor_absoluteY="25dp">
+
+    <carbon.widget.TextView
+        android:id="@+id/textViewAsk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="سوال"
+        android:textColor="@color/colorgold"
+        app:carbon_fontPath="@string/iransans" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="16dp"
+        app:cardBackgroundColor="@color/colorBGMain"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        app:strokeColor="@color/colorblue"
+        app:strokeWidth="4dp">
+
+        <LinearLayout
+            android:id="@+id/google_maps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_google_maps" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+
+                android:text="و یا مکان خدمت را از روی نقشه انتخاب کنید"
+                android:textColor="@color/colorblue" />
+        </LinearLayout>
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="-50dp"
+            app:cameraZoom="15"
+            app:liteMode="true"
+            app:mapType="normal"
+            tools:visibility="visible" />
+    </androidx.cardview.widget.CardView>
+
+    <carbon.widget.EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/carbon_padding"
+        android:background="@color/colorBGMain"
+        android:id="@+id/address"
+        app:carbon_fontPath="@string/iransans"
+        android:cursorVisible="true"
+        android:hint="آدرس دقیق خود را وارد کنید"
+        android:padding="@dimen/carbon_grid8"
+        android:textColor="@color/white"
+        android:textColorHint="@color/colorblue"
+        android:textSize="13dp"
+        app:carbon_cornerRadius="5dp"
+        app:carbon_cursorColor="@color/colorblue" />
+
+    <carbon.widget.TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="dsffdsf"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        app:carbon_fontPath="@string/iransans"
+        tools:layout_editor_absoluteX="8dp" />
+</carbon.widget.LinearLayout>

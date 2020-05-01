@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carbon.widget.RadioButton android:layout_width="wrap_content"
+    android:background="@drawable/checked_background"
+    android:layout_weight="1"
+    android:gravity="center"
+    app:carbon_tint="@color/colorblue"
+    android:textColor="@color/white"
+    android:padding="@dimen/carbon_grid8"
+    android:text="@string/action_search"
+    app:carbon_fontPath="@string/iransans"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android" />

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carbon.widget.CheckBox android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:text="test"
+    android:drawablePadding="@dimen/carbon_grid8"
+    android:background="@android:color/transparent"
+    android:layout_margin="8dp"
+    app:carbon_tint="@color/colorblue"
+    android:textColor="@color/colorblue"
+    xmlns:android="http://schemas.android.com/apk/res/android" />

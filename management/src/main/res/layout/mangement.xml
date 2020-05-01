@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:cardBackgroundColor="@color/colorcardbg"
+            app:cardElevation="0dp">
+
+            <carbon.widget.TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:carbon_fontPath="@string/iransans"
+                android:gravity="center"
+                android:text="یادآوری و یادداشت"
+                android:textColor="@android:color/white" />
+
+            <ImageButton
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_gravity="center|start"
+                android:onClick="Finish"
+                android:src="@drawable/ic_keyboard_arrow_left_blue_24dp_light" />
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorcardbg">
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="0.8dp"
+                    android:background="@color/colorblue" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_gravity="bottom"
+                    android:background="@color/colorBGMain" />
+
+                <ir.protech21.NavigationTabStrip2
+                    android:id="@+id/nts_center"
+                    android:layout_width="390dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    app:nts_active_color="@color/colorgold"
+                    app:nts_color="@color/colorgold"
+                    app:nts_corners_radius="10dp"
+                    app:nts_factor="0.8"
+                    app:nts_gravity="bottom"
+                    app:nts_inactive_color="#81ffffff"
+                    app:nts_titles="@array/titles_management"
+                    app:nts_type="point"
+                    app:nts_typeface="fonts/iransans.ttf"
+                    app:nts_weight="6dp" />
+
+            </FrameLayout>
+        </LinearLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/FloatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_add_black_24dp"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carbon.widget.FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="16dp"
+    android:background="@color/colorBGMain"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="مبلغ"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="end"
+            android:layout_marginRight="16dp"
+            android:textColor="@color/mdtp_white"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="تومان"
+                android:layout_marginLeft="16dp"
+                android:layout_gravity="center"
+                android:textColor="@color/mdtp_white"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/edit_text_background"
+                android:gravity="center|start"
+                android:id="@+id/Price"
+                android:paddingTop="8dp"
+                android:textColor="@android:color/primary_text_dark"
+                android:paddingBottom="8dp"
+                android:layout_margin="8dp"
+                android:textSize="10dp"
+                android:paddingLeft="16dp"
+                android:inputType="number"
+                android:maxLines="1"
+                android:paddingRight="16dp"
+                android:textColorHint="#80FFFFFF"
+                android:layout_height="40dp" />
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="زمان پرداخت قسط"
+            android:layout_gravity="end"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="-8dp"
+            android:textColor="@color/mdtp_white"
+            android:layout_height="wrap_content" />
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_margin="@dimen/carbon_grid8"
+           android:layout_height="wrap_content">
+
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_gravity="center"
+               android:background="@drawable/edit_text_background"
+               android:gravity="center"
+               android:id="@+id/time"
+               android:paddingTop="8dp"
+               android:textColor="@android:color/primary_text_dark"
+               android:paddingBottom="8dp"
+               android:layout_margin="4dp"
+               android:hint="ساعت پرداخت"
+               android:textSize="10dp"
+               android:paddingLeft="16dp"
+               android:inputType="number"
+               android:maxLines="1"
+               android:paddingRight="16dp"
+               android:textColorHint="#80FFFFFF"
+               android:layout_height="40dp" />
+
+           <TextView
+               android:layout_width="0dp"
+               android:layout_weight="1"
+               android:background="@drawable/edit_text_background"
+               android:gravity="center|start"
+               android:id="@+id/date"
+               android:layout_margin="4dp"
+               android:paddingTop="8dp"
+               android:textColor="@android:color/primary_text_dark"
+               android:paddingBottom="8dp"
+               android:hint="تاریخ مورد نظر را انتخاب کنید"
+               android:textSize="10dp"
+               android:paddingLeft="16dp"
+               android:inputType="number"
+               android:maxLines="1"
+               android:paddingRight="16dp"
+               android:textColorHint="#80FFFFFF"
+               android:layout_height="40dp" />
+       </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:background="@color/colorblue"
+        android:textColor="@color/mdtp_white"
+        android:layout_marginTop="8dp"
+        android:id="@+id/sabt"
+        android:text="ثبت"
+        android:layout_height="50dp" />
+    </LinearLayout>
+</carbon.widget.FrameLayout>
