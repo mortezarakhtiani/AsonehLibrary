@@ -60,10 +60,14 @@ class Loading {
     fun dismiss() {
         activity?.let {
             val viewGroup = viewGroup(it)
-                viewGroup.removeViewAt(viewGroup.childCount - 1)
+            viewGroup.removeViewAt(viewGroup.childCount - 1)
         }
         frameAnimation?.stop()
         dialog?.dismiss()
+    }
+
+    fun error() {
+
     }
 
 
