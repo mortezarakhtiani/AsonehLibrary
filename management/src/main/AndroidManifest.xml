@@ -4,5 +4,6 @@
     <application>
         <activity android:name=".PayActivity" />
         <activity android:name=".ManagementActivity" />
+        <activity android:name=".BookletAdd" />
     </application>
 </manifest>
