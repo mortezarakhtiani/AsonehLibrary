@@ -5,12 +5,13 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary">
 
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mavaghatRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clipToPadding="false"
         android:orientation="vertical"
+        android:paddingBottom="100dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

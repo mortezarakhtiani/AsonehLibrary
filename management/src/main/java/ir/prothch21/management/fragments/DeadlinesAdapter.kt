@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.error.ANError
@@ -16,22 +15,17 @@ import com.androidnetworking.interfaces.OkHttpResponseAndStringRequestListener
 import ir.protech21.persian.date.DatePickerDialog
 import ir.protech21.persian.utils.PersianCalendar
 import ir.prothch21.management.R
+import ir.prothch21.management.models.DeadlinesModel
+import kotlinx.android.synthetic.main.dead_lines_item.view.*
 import okhttp3.Response
 import java.util.*
 
 class DeadlinesAdapter(private val activity: Deadlines, private var deadlinesModels: ArrayList<DeadlinesModel>) : RecyclerView.Adapter<DeadlinesAdapter.ViewHolder>() {
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
-        return if (deadlinesModels.isEmpty()) {
-            ViewHolder(LayoutInflater.from(activity.activity).inflate(R.layout.not_found, viewGroup, false))
-        } else {
-            ViewHolder(LayoutInflater.from(activity.activity).inflate(R.layout.dead_lines_item, viewGroup, false))
-        }
+        return   ViewHolder(LayoutInflater.from(activity.activity).inflate(R.layout.dead_lines_item, viewGroup, false))
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, i: Int) {
-        if (deadlinesModels.isEmpty()) {
-            return
-        }
         viewHolder.itemView.setOnClickListener {
             val dialog = Dialog(activity.activity!!)
             dialog.setContentView(R.layout.pay_dialog)
@@ -71,21 +65,15 @@ class DeadlinesAdapter(private val activity: Deadlines, private var deadlinesMod
     }
 
     override fun getItemCount(): Int {
-        return if (deadlinesModels.isEmpty()) 1 else deadlinesModels.size
+        return deadlinesModels.size
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var title: TextView
-        var type: TextView
-        var price: TextView
-        var date: TextView
+        var title = itemView.title
+        var type = itemView.type
+        var price = itemView.price
+        var date = itemView.date
 
-        init {
-            title = itemView.findViewById(R.id.title)
-            type = itemView.findViewById(R.id.type)
-            price = itemView.findViewById(R.id.price)
-            date = itemView.findViewById(R.id.date)
-        }
     }
 
 }

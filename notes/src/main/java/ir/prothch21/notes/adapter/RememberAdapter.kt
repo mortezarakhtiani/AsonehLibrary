@@ -6,20 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
-import android.widget.CheckBox
-import android.widget.CompoundButton
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import ir.protech21.persian.utils.PersianCalendar
 import ir.prothch21.notes.R
 import ir.prothch21.notes.model.RememberModel
 import ir.prothch21.notes.remember.Remember
 import kotlinx.android.synthetic.main.remember_item.view.*
-import java.util.*
 import kotlin.collections.ArrayList
 
 class RememberAdapter(private val activity: Activity, private val rememberModels: ArrayList<RememberModel>) : RecyclerView.Adapter<RememberAdapter.ViewHolder>() {
-    var now: PersianCalendar
+    var now: PersianCalendar = PersianCalendar()
     var booleans = ArrayList<Boolean>()
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(activity).inflate(R.layout.remember_item, viewGroup, false))
@@ -46,10 +42,10 @@ class RememberAdapter(private val activity: Activity, private val rememberModels
             intent.putExtra("des", rememberModels[i].des)
             intent.putExtra("location", rememberModels[i].location)
             intent.putExtra("code", rememberModels[i].code)
-            activity.startActivity(intent)
+            activity.startActivityForResult(intent,2585)
         }
 
-        viewHolder.check.setOnCheckedChangeListener { buttonView, isChecked ->
+        viewHolder.title.setOnCheckedChangeListener { buttonView, isChecked ->
             booleans[i] = isChecked
             function?.invoke(i, booleans)
         }
@@ -75,15 +71,11 @@ class RememberAdapter(private val activity: Activity, private val rememberModels
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var check = itemView.check
-        var title = itemView.title
-        var date = itemView.date
-        var time = itemView.time
+        val title = itemView.title
+        val date = itemView.date
+        val time = itemView.time
 
 
     }
 
-    init {
-        now = PersianCalendar()
-    }
 }

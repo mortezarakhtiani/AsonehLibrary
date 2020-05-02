@@ -14,10 +14,11 @@ import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.OkHttpResponseAndStringRequestListener
 import ir.protech21.persian.date.DatePickerDialog
 import ir.protech21.persian.utils.PersianCalendar
+import ir.prothch21.management.models.Management
 import okhttp3.Response
 import java.util.*
 
-internal class PayAdapter(private val activity: Activity, private val payModels: ArrayList<PayModel>) : RecyclerView.Adapter<PayAdapter.ViewHolder>() {
+internal class PayAdapter(private val activity: Activity, private val payModels: ArrayList<PayActivity.PayModel>) : RecyclerView.Adapter<PayAdapter.ViewHolder>() {
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(activity).inflate(R.layout.pay_item, viewGroup, false))
     }
@@ -56,7 +57,7 @@ internal class PayAdapter(private val activity: Activity, private val payModels:
                     val s = (dialog.findViewById<View>(R.id.des) as EditText).text.toString()
                     AndroidNetworking.post(activity.getString(R.string.url) + "PayQ/").addBodyParameter("id", payModels[i].id).addBodyParameter("des", s).addBodyParameter("paydate", textView.text.toString()).build().getAsOkHttpResponseAndString(object : OkHttpResponseAndStringRequestListener {
                         override fun onResponse(okHttpResponse: Response, response: String) {
-                            payModels[i] = PayModel(payModels[i].id, payModels[i].year, payModels[i].month, payModels[i].day, payModels[i].hour, payModels[i].minute, "true", payModels[i].price, textView.text.toString(), s)
+                            payModels[i] = PayActivity.PayModel(payModels[i].id, payModels[i].year, payModels[i].month, payModels[i].day, payModels[i].hour, payModels[i].minute, "true", payModels[i].price, textView.text.toString(), s)
                             notifyDataSetChanged()
                             dialog.dismiss()
                         }

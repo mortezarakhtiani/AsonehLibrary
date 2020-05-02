@@ -42,7 +42,7 @@ class UploadViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
                 val intent = Intent(Intent.ACTION_GET_CONTENT)
                 intent.type = "image/*"
 
-                FilePicker(activity).setOnResponse(Intent.createChooser(intent, "Select Picture")){
+                FilePicker(activity).setOnResponse(Intent.createChooser(intent, "Select Picture")){it->
                     imagelin.image.setImageURI(it?.data)
                     imagelin.tag = Utils.getPath(activity, it?.data)
                     if (!(itemView.getTag(R.id.BOOLEAN) as Boolean)) {

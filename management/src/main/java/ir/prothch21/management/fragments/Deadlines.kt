@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import ir.prothch21.management.R
+import ir.prothch21.management.models.DeadlinesModel
 import java.util.*
 
 class Deadlines : Fragment() {

@@ -29,8 +29,6 @@ import kotlin.collections.ArrayList
 
 class Remember : AppCompatActivity(), View.OnClickListener {
     var looping = arrayOf("ساعتی", "روزانه", "هفتگی", "ماهانه", "سالانه")
-    var phone: String? = ""
-    var token: String? = ""
     var update = false
     var code: String? = null
     var now: JalaliCalendar? = null
@@ -94,9 +92,6 @@ class Remember : AppCompatActivity(), View.OnClickListener {
         //        remember.setOnCheckedChangeListener((buttonView, isChecked) -> TopDrawer(materialCardView, isChecked?0:materialCardView.getLayoutParams().height, isChecked?200:0));
         timeAlarm!!.setOnClickListener { v: View -> setTime(v) }
         loop!!.typeface = Typeface.createFromAsset(assets, "fonts/iransans.ttf")
-        //        loop.setOnCheckedChangeListener((buttonView, isChecked) -> TopDrawer(loopLin, isChecked?0:loopLin.getLayoutParams().height, isChecked?200:0));
-        sms!!.setOnCheckedChangeListener { buttonView: CompoundButton?, isChecked: Boolean -> phone = if (isChecked) getSharedPreferences("Profile", Context.MODE_PRIVATE).getString("phone", null) else "" }
-        notify!!.setOnCheckedChangeListener { buttonView: CompoundButton?, isChecked: Boolean -> token = if (isChecked) getSharedPreferences("Profile", Context.MODE_PRIVATE).getString("token", null) else "" }
         if (update) {
             titleAlarm!!.setText(intent.getStringExtra("title"))
             timeAlarm!!.text = String.format("%s:%s", intent.getStringExtra("hour"), intent.getStringExtra("minute"))
@@ -131,55 +126,10 @@ class Remember : AppCompatActivity(), View.OnClickListener {
             } else {
                 val pd = alarmPriodRepet!!.text.toString()
                 val anr = alarmNumberRepet!!.text.toString()
-                if (update) {
-                    update(pd, anr, getString(R.string.url) + "updateRemember/")
-                } else {
-                    send(pd, anr, getString(R.string.url) + "remember/")
-                }
+                send(pd, anr, getString(R.string.url) + "remember/")
             }
         }
     }
-
-    private fun update(pd: String, anr: String, url: String) {
-        val dialog = ProgressDialog(this)
-        dialog.setMessage("درحال بارگذاری...")
-        dialog.isIndeterminate = false
-        dialog.max = 100
-        dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL)
-        dialog.progress = 0
-        dialog.show()
-        AndroidNetworking.upload(url)
-                .setTag("uploadTest")
-                .setPriority(Priority.HIGH)
-                .addMultipartParameter("title", titleAlarm!!.text.toString())
-                .addMultipartParameter("id", getSharedPreferences("Profile", Context.MODE_PRIVATE).getString("id", null))
-                .addMultipartParameter("year", now!!.year.toString())
-                .addMultipartParameter("month", now!!.month.toString())
-                .addMultipartParameter("day", now!!.day.toString())
-                .addMultipartParameter("code", code)
-                .addMultipartParameter("priod", pd)
-                .addMultipartParameter("hour", timeAlarm!!.text.toString().substring(0, timeAlarm!!.text.toString().indexOf(":")))
-                .addMultipartParameter("minute", timeAlarm!!.text.toString().substring(timeAlarm!!.text.toString().indexOf(":") + 1)) //                .addMultipartParameter("TypeLoop", String.valueOf(alarmHowRepet.getSelectedItemPosition()))
-                .addMultipartParameter("loop", anr)
-                .addMultipartParameter("location", alarmPlace!!.text.toString())
-                .addMultipartParameter("des", explaneAlarm!!.text.toString())
-                .addMultipartParameter("sms", phone).addMultipartParameter("notify", token).build().setUploadProgressListener { bytesUploaded, totalBytes ->
-                    dialog.progress = (bytesUploaded / (totalBytes.toInt() / 100)).toInt() //Updating progress
-                    dialog.setTitle(dialog.progress.toString())
-                }.getAsOkHttpResponseAndString(object : OkHttpResponseAndStringRequestListener {
-                    override fun onResponse(okHttpResponse: Response, response: String) {
-                        dialog.dismiss()
-                        setResult(Activity.RESULT_OK)
-                        finish()
-                    }
-
-                    override fun onError(anError: ANError) {
-                        dialog.dismiss()
-                        Toast.makeText(this@Remember, "خطا در اتصال", Toast.LENGTH_SHORT).show()
-                    }
-                })
-    }
-
     private fun send(pd: String, anr: String, url: String) {
         val dialog = ProgressDialog(this)
         dialog.setMessage("درحال بارگذاری...")
@@ -191,20 +141,25 @@ class Remember : AppCompatActivity(), View.OnClickListener {
         AndroidNetworking.upload(url).addMultipartFile(hashMap)
                 .setTag("uploadTest")
                 .setPriority(Priority.HIGH)
-                .addMultipartParameter("title", titleAlarm!!.text.toString())
-                .addMultipartParameter("id", getSharedPreferences("Profile", Context.MODE_PRIVATE).getString("id", null))
-                .addMultipartParameter("year", now!!.year.toString())
-                .addMultipartParameter("month", now!!.month.toString())
-                .addMultipartParameter("day", now!!.day.toString())
-                .addMultipartParameter("priod", pd)
-                .addMultipartParameter("hour", timeAlarm!!.text.toString().substring(0, timeAlarm!!.text.toString().indexOf(":")))
-                .addMultipartParameter("minute", timeAlarm!!.text.toString().substring(timeAlarm!!.text.toString().indexOf(":") + 1))
-                .addMultipartParameter("TypeLoop", position.toString())
-                .addMultipartParameter("loop", anr)
-                .addMultipartParameter("location", alarmPlace!!.text.toString())
-                .addMultipartParameter("des", explaneAlarm!!.text.toString())
-                .addMultipartParameter("sms", phone)
-                .addMultipartParameter("notify", token).build().setUploadProgressListener { bytesUploaded, totalBytes ->
+                .apply {
+                    addMultipartParameter("title", titleAlarm!!.text.toString())
+                    addMultipartParameter("id", getSharedPreferences("Profile", Context.MODE_PRIVATE).getString("id", null))
+                    addMultipartParameter("year", now!!.year.toString())
+                    addMultipartParameter("month", now!!.month.toString())
+                    addMultipartParameter("day", now!!.day.toString())
+                    addMultipartParameter("priod", pd)
+                    addMultipartParameter("hour", timeAlarm!!.text.toString().substring(0, timeAlarm!!.text.toString().indexOf(":")))
+                    addMultipartParameter("minute", timeAlarm!!.text.toString().substring(timeAlarm!!.text.toString().indexOf(":") + 1))
+                    addMultipartParameter("TypeLoop", position.toString())
+                    addMultipartParameter("loop", anr)
+                    if (code != null)
+                        addMultipartParameter("code", code)
+                    addMultipartParameter("location", alarmPlace!!.text.toString())
+                    addMultipartParameter("des", explaneAlarm!!.text.toString())
+                    addMultipartParameter("sms", sms?.isChecked.toString())
+                    addMultipartParameter("notify", notify?.isChecked.toString())
+                }
+                .build().setUploadProgressListener { bytesUploaded, totalBytes ->
                     dialog.progress = (bytesUploaded / (totalBytes.toInt() / 100)).toInt() //Updating progress
                     dialog.setTitle(dialog.progress.toString())
                 }.getAsOkHttpResponseAndString(object : OkHttpResponseAndStringRequestListener {

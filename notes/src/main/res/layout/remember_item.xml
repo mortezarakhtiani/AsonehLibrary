@@ -37,19 +37,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:drawablePadding="8dp"
-                android:id="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="5dp"
-                android:text="بیداری 1"
-                android:textColor="@color/colorwhite" />
-
             <carbon.widget.CheckBox
                 android:background="@null"
-                android:id="@+id/check"
+                android:id="@+id/title"
+                android:text="بیداری 1"
+                android:textColor="@color/colorwhite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:carbon_tint="@color/colorblue"
